@@ -1,0 +1,17 @@
+The following CSS code snippet demonstrates a common error that can be difficult to debug: it's related to specificity and inheritance in CSS.  The child element's style is not properly overridden.
+
+```css
+.parent {
+  color: blue;
+}
+
+.parent .child {
+  color: red !important;
+}
+
+.child {
+  color: green;
+}
+```
+
+In this example, the `.child` element will have a `color` of `green` rather than `red`, even though `!important` is used. This is due to the order of precedence in CSS specificity.  The selector `.parent .child` is more specific than `.child`, but not enough to override the `!important` declaration set on `.child`.  The high specificity of `!important` rules often leads to unexpected behavior.
