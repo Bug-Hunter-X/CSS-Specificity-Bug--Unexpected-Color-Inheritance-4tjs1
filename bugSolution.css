@@ -1,0 +1,14 @@
+The solution involves removing the `!important` declaration and properly managing CSS specificity. 
+
+```css
+.parent {
+  color: blue;
+}
+
+.parent .child {
+  color: red; 
+}
+
+/*The .child selector is removed as it's now correctly overridden by the parent .child selector*/
+```
+By removing the `!important` and relying on the natural cascading order of CSS specificity, the child element within the parent will correctly inherit the red color as intended.
